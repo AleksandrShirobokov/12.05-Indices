@@ -2,6 +2,12 @@
 # Александр Широбоков
 ## Задание 1
 ### Напишите запрос к учебной базе данных, который вернёт процентное отношение общего размера всех индексов к общему размеру всех таблиц.
+![Снимок экрана (233)](https://github.com/AleksandrShirobokov/12.05-Indices/assets/69298696/2473c8ae-d0fd-4375-a3e4-30c16335443d)
+```
+SELECT (SUM(INDEX_LENGTH) / SUM(DATA_LENGTH)) * 100 AS отношение_индекса_к_таблице
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'sakila';
+```
 ## Задание 2
 ### Выполните explain analyze следующего запроса:
 ```
